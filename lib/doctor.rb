@@ -12,9 +12,15 @@ class Doctor
   end
 
   def new_appointment(date, patient)
-    Song.new()
+    Appointment.new(patient, self, date)
   end
 
+  def appointments
+    binding.pry
+    Appointment.all.select do |appointment|
+      appointment.doctor == self
+    end
+  end
 
 
 end
