@@ -16,8 +16,4 @@ class Appointment
     @@all << self
   end
 
-  def patient
-    # binding.pry
-  end
-
 end
