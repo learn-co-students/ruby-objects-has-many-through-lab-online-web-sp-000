@@ -15,14 +15,13 @@ class Doctor
 
   def new_appointment(patient, date)
     Appointment.new(patient, self, date)
-    # binding.pry
   end
 
   def appointments
-    # binding.pry
-    # Appointment.all.select do |appointment|
-    #   appointment.doctor == self
-    # end
+    binding.pry
+    Appointment.all.select do |appointment|
+      appointment.doctor == self
+    end
   end
 
 
