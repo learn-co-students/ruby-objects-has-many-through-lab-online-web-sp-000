@@ -7,7 +7,7 @@ class Genre
 
   def initialize(genre_name)
     @name = genre_name
-    @@all << genre_name
+    @@all << self
   end
 
   def self.all
@@ -15,7 +15,9 @@ class Genre
   end
 
   def songs
-    binding.pry
+    Song.all.select do |song|
+      song.genre == self
+    end
   end
 
 
