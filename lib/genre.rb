@@ -1,3 +1,5 @@
+require 'pry'
+
 class Genre
   attr_accessor :name
 
@@ -10,6 +12,10 @@ class Genre
 
   def self.all
     @@all
+  end
+
+  def songs
+    binding.pry
   end
 
 
