@@ -17,7 +17,7 @@ class Appointment
   end
 
   def patient
-    binding.pry
+    # binding.pry
   end
 
 end
