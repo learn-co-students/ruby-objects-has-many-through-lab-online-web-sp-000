@@ -1,7 +1,7 @@
-require 'pry'
+require 'pry' 
 
 class Artist 
-  attr_accessor :name, :songs
+  attr_accessor :name, :songs 
   
   @@all = [] 
   
@@ -22,6 +22,7 @@ class Artist
   
   def songs 
     @songs
+   
   end
     
   
