@@ -1,6 +1,5 @@
 require "spec_helper"
 
-
 describe "Artist" do
 
   describe "#name" do
@@ -18,6 +17,7 @@ describe "Artist" do
 
       expect(Artist.all).to include(jay_z)
       expect(Artist.all).to include(kendrick)
+      
     end
   end
 
@@ -29,8 +29,11 @@ describe "Artist" do
 
       expect(jay_z.songs).to include(ninety_nine_problems)
       expect(ninety_nine_problems.artist).to eq(jay_z)
+
     end
   end
+           
+
 
   describe "#songs" do
     it "has many songs" do
