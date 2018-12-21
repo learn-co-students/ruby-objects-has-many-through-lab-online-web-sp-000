@@ -9,7 +9,7 @@ class Patient
   end
 
   def new_appointment(doctor, date)
-    Appointment.new(date, self, doctor)
+    Appointment.new(doctor, date, self)
   end
 
   def self.all
@@ -17,11 +17,11 @@ class Patient
   end
 
   def appointments
-    Appointment.all.select do |appointment|
-      appointment.patient == self
+    doctors.all.select do |doctor|
+      doctor.appointments == self
     end
   end
-
+                                        #fix these two methods they break the code
   def doctors
     appointments.collect do |appointment|
       appointment.doctor
