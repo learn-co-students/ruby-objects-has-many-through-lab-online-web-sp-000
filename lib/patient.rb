@@ -6,6 +6,11 @@ class Patient
     self.name = name
     self.doctors = []
     self.appointments = []
+    @@all << self
+  end
+  
+  def new_appointment(doctor, date)
+    appointment = Appointment.new(self, doctor, date)
   end
   
   def self.all
