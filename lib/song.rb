@@ -14,7 +14,6 @@ end
   end
 
   def artist
-  self.artist.name
+  self.artist_name.name
   end
 end
- 
