@@ -14,18 +14,16 @@ def self.all
  end
 
  def new_song(name, genre)
- new_song = Song.new(name, self, genre)
- @songs<<new_song
- binding.pry
- new_song
+   Song.new(name, self, genre)
  end
 
 
 def songs
-    @songs.select {|song| song.artist == self}
+  Song.all.select {|song| song.artist == self}
 end
 
 def genres
-
+ Song.all.map {|song| song.genre}
 end
 end
+  
