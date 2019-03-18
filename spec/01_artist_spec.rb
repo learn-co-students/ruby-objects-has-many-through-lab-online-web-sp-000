@@ -21,6 +21,17 @@ describe "Artist" do
     end
   end
 
+  describe "#genres" do
+    it "has many genres, through songs" do
+      jay_z = Artist.new("Jay-Z")
+      rap = Genre.new("rap")
+      ninety_nine_problems = jay_z.new_song("Ninety Nine Problems", rap)
+      # binding.pry
+      expect(jay_z.genres).to include(rap)
+      expect(jay_z.songs.first.genre).to eq(rap)
+    end
+  end
+
   describe "#new_song" do
     it "given a name and genre, creates a new song associated with that artist" do
       jay_z = Artist.new("Jay-Z")
@@ -42,15 +53,6 @@ describe "Artist" do
     end
   end
 
-  describe "#genres" do
-    it "has many genres, through songs" do
-      jay_z = Artist.new("Jay-Z")
-      rap = Genre.new("rap")
-      ninety_nine_problems = jay_z.new_song("Ninety Nine Problems", rap)
-      # binding.pry
-      expect(jay_z.genres).to include(rap)
-      expect(jay_z.songs.first.genre).to eq(rap)
-    end
-  end
+
 
 end
