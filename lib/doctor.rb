@@ -15,23 +15,17 @@ class Doctor
   def new_appointment(patient, date)
      appointment = Appointment.new(date, patient, self)
   end 
-  
-  
    
   def appointments
     Appointment.all.select do |appointment|
-      appointment.doctor = self
+      appointment.doctor == self
     end 
   end 
     
     def patients
-    array_patients = []
-    Appointment.all.each do |appointment|
-      if appointment.doctor == self 
-        array_patients << appointment.patient
+      self.appointments.collect do |appointment|
+        appointment.patient 
       end 
-    end
-    array_patients.uniq 
   end
   
   
