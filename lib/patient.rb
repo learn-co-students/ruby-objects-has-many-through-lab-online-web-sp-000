@@ -9,22 +9,23 @@ attr_accessor :name, :appointments, :doctor
       end
 
   def self.all
-    @@all
+      @@all
   end
-  def new_appointment(doctor, date)
-    appointment = Appointment.new(self, doctor, date)
-    end
 
-   def appointments
-    Appointment.all.select do |appointment|
+  def new_appointment(doctor, date)
+      appointment = Appointment.new(self, doctor, date)
+  end
+
+  def appointments
+      Appointment.all.select do |appointment|
       appointment.patient == self
-    end
+      end
   end
 
    def doctors
       appointments.map do |appointment|
       appointment.doctor
     end
-end
+  end
 
 end
