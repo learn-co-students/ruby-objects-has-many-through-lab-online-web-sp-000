@@ -1,4 +1,4 @@
-
+require "pry"
 
 class Doctor
 
@@ -15,12 +15,12 @@ class Doctor
     @@all
   end
 
-  def new_appointment(date, patient)
+  def new_appointment(patient, date)
     Appointment.new(date, patient, self)
   end
 
   def patients
-    Appointment.all.map do |appointment|
+    appointments.collect do |appointment|
       appointment.patient
     end
   end
