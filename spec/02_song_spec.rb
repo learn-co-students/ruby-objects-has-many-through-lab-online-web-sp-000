@@ -6,7 +6,6 @@ describe "Song" do
     it "initializes with a name, an artist, and a genre" do
       rap = Genre.new("rap")
       jay_z = Artist.new("Jay-Z")
-
       expect{Song.new("Lucifer", jay_z, rap)}.to_not raise_error
     end
   end
