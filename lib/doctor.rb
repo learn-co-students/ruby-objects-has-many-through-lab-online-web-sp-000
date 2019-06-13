@@ -19,10 +19,6 @@ class Doctor
   end
 
   def patients
-    # appointments.select do |appt|
-    #   appt.patient
-    # end
-    appointments.map {|appt| appt.patient}
-    
+    self.appointments.collect{|appt| appt.patient}.uniq
   end
 end
