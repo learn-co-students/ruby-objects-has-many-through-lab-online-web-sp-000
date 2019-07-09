@@ -16,13 +16,13 @@ class Artist
     Song.new(name, self, genre)      #self here being Artist instance called on Song
   end
 
-  def songs                               #method #songs HAS MANY songs
+  def songs                               #An artist HAS MANY songs
     Song.all.select do |song|                      #Song Class. .all method
       song.artist == self                       #song enumerator, artist method (Song class)  == Artist instance (self)
     end
   end
 
-  def genres                               #HAS MANY through songs
+  def genres                               #HAS MANY: An artist has many genres through its songs
     songs.map {|songs| songs.genre}
     #songs.map(&:genre)
   end
