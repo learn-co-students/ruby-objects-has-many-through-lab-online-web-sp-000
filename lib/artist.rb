@@ -16,6 +16,7 @@ class Artist
   def new_song(title, genre)
     new_song = Song.new(title, self, genre)
     @songs << new_song
+    new_song
   end
   
   def songs
@@ -23,7 +24,8 @@ class Artist
   end
   
   def genres 
-    @songs.map {|s| Song.genre.uniq}
+    @songs.map {|s| s.genre}.uniq
+    
   end
   
 end
