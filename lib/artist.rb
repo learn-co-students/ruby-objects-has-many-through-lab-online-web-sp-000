@@ -5,7 +5,7 @@ attr_accessor :song, :genre, :name, :artist
 
 def initialize(name)
   @name = name
-  @@all << name
+  @@all << self
 end
 
 def new_song(name, genre)
@@ -17,11 +17,13 @@ def songs
     song.artist == self
   end
 end
-# def genres
-#   Genre.all.select do |genre|
-#     genre.artist == self
-#   end
-# end
+def genres
+  Song.all.each do |song|
+    if song.artist == self
+      song.genre
+    end
+  end
+end
 def self.all
   @@all
 end

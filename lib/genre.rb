@@ -4,9 +4,19 @@ attr_accessor :name, :song, :artist, :genre
 
 def initialize(name)
   @name = name
-  @@all << name
+  @@all << self
 end
 
+def songs
+  Song.all.select do |song|
+    song.genre == self
+  end
+end
+def artists
+  Song.all.select do |song|
+    song.artist if song.genre == self
+  end
+end
 def self.all
   @@all
 end
