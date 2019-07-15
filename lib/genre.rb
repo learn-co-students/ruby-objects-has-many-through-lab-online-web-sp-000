@@ -13,7 +13,7 @@ def songs
   end
 end
 def artists
-  Song.all.select do |song|
+  Song.all.collect do |song|
     song.artist if song.genre == self
   end
 end
