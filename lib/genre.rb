@@ -8,11 +8,16 @@ class Genre
     @@all << self
   end
   
-def songs
-    @songs
-  end
+ def songs
+      Song.all.select do |song|
+      song.genre == self
+   end
+end 
+   
   def artists
-    @songs.collect {|song| song.artist}
+      Song.all.collect do |song|
+      song.artist
+    end
   end
   
   def self.all
