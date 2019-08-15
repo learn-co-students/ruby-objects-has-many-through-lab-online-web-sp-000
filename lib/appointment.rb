@@ -1,11 +1,12 @@
+require 'pry'
 class Appointment 
-  attr_reader :patient, :doctor, :date 
+  attr_reader :doctor, :patient, :date 
   @@all = [] 
   
-  def initialize(patient, doctor, date)
-    @date = date 
+  def initialize(doctor, patient, date)
     @doctor = doctor 
-    @patient = patient 
+    @patient = patient
+    @date = date  
     @@all << self
   end 
   
@@ -14,7 +15,7 @@ class Appointment
   end 
   
   def patients 
-    self.patient 
+    self.patient
   end 
   
   def doctors 
