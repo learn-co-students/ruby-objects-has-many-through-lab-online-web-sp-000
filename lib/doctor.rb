@@ -12,7 +12,7 @@ class Doctor
     @@all
   end
   
-  def new_appointment(a_date, a_patient)
+  def new_appointment(a_patient, a_date)
     Appointment.new(a_date, a_patient, self)
   end
   
@@ -24,8 +24,7 @@ class Doctor
   
   def patients
     patients_arr = []
-    appointments.select do |d_appt|
-      binding.pry
+    appointments.each do |d_appt|
       patients_arr << d_appt.patient
     end
     patients_arr
