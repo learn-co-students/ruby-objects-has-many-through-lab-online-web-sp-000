@@ -1,9 +1,10 @@
 require "pry"
 class Doctor
-  attr_accessor
+  attr_accessor :name
   
   @@all = []
-  def initialize
+  def initialize(name)
+    @name = name
     @@all << self
   end
   
@@ -12,7 +13,7 @@ class Doctor
   end
   
   def appointments
-    Appointments.all.select do |d_appt|
+    Appointment.all.select do |d_appt|
       d_appt.name == self.name
     end
   end

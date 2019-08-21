@@ -1,6 +1,6 @@
 require "pry"
 class Artist
-  attr_accessor :name
+  attr_accessor :name, :genre
   
   @@all = []
   def initialize(name)
@@ -9,18 +9,25 @@ class Artist
   end
   
   def self.all
-    @all
+    @@all
   end
   
   def songs
-    Songs.all.select do |d_song|
-      d_song.name == self.name
+    Song.all.select do |d_song|
+      d_song.artist.name == self.name
     end
   end
   
-  def genre
+  def new_song(a_name, a_genre)
+    Song.new(a_name, self, a_genre)
+  end
+  
+  def genres
+    genre_arr = []
     songs.each do |d_song|
+      genre_arr << d_song.genre.name
     end
+    genre_arr
   end
   
 end
