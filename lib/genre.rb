@@ -14,14 +14,16 @@ class Genre
   
   def songs
     Song.all.select do |d_song|
-      d_song.name == self.name
+      d_song.genre.name == self.name
     end
   end
   
   def artists
-    self.all.select do |d_genre|
-      d_genre.songs.name == artists.name
+    artist_arr = []
+    songs.each do |d_song|
+      artist_arr << d_song.artist
     end
+    artist_arr
   end
-  
+
 end

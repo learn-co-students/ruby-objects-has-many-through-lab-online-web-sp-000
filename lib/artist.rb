@@ -25,7 +25,7 @@ class Artist
   def genres
     genre_arr = []
     songs.each do |d_song|
-      genre_arr << d_song.genre.name
+      genre_arr << d_song.genre
     end
     genre_arr
   end
