@@ -34,7 +34,7 @@ describe "Appointment" do
 
   describe "#doctor" do
     it "belongs to a doctor" do
-      doctor_who = Doctor.new("The Doctor")
+      doctor_who = Doctor.new("TheDoctor")
       hevydevy = Patient.new("Devin Townsend")
       appointment = doctor_who.new_appointment(hevydevy, "Friday, January 32nd")
       expect(appointment.doctor).to eq(doctor_who)
