@@ -12,8 +12,9 @@ class Doctor
     @@all
   end
   
-  def new_appointment(date, patient)
+  def new_appointment(patient, date)
     new_appointment = Appointment.new(date, patient, self)
+    new_appointment.doctor = self
     Appointment.all << new_appointment
     new_appointment
   end
@@ -23,7 +24,8 @@ class Doctor
   end
   
   def patients
-    appointments.collect{|appointment| appointment.patient}
+    patients = appointments.map{|appointment| appointment.patient}
+    patients
   end
   
 end
