@@ -1,7 +1,7 @@
 require "pry"
 
 class Artist
-  attr_accessor :name, :genre
+  attr_accessor :name, :genre, :song
   @@all=[]
 
   def initialize (name)
@@ -9,7 +9,22 @@ class Artist
     @@all << name
   end
 
-  
+  def new_song(name,genre)
+    song = Song.new(name,genre)
+    song.artist = self
+    song
+  end
+
+  def songs
+    Songs.all select {|song| song.artist == self}
+  end
+
+  def genres
+    Song.all.map do |song|
+      song.genre
+    end
+  end
+
   def self.all
     @@all
   end
