@@ -4,9 +4,9 @@ class Genre
   attr_accessor :name
   @@all = []
 
-  def initialize
+  def initialize (name)
     @name = name
-    @@all << name
+    @@all << self
   end
 
   def songs
