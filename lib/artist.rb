@@ -23,6 +23,6 @@ attr_accessor :name, :genre
   end
   
   def genres
-    songs.map {|genre| songs.genre == self}
+   songs.map {|song| song.genre}
   end
 end
