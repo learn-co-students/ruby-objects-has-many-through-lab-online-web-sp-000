@@ -13,5 +13,5 @@ def artist
     def new_song
 
     end
-/
+
 end
