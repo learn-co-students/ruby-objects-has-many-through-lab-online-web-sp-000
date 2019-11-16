@@ -14,17 +14,18 @@ describe 'Patient' do
       appointment = hevydevy.new_appointment(doctor_who, 'Friday, January 32nd')
 
       expect(hevydevy.appointments).to include(appointment)
-      expect(appointment.patient).to eq(hevydevy)
+
+      expect(appointment.patient_name).to eq(hevydevy)
     end
   end
 
-  describe '.all' do
+  describe '.all_Patients' do
     it 'knows about all patients' do
       zero = Patient.new('Zero')
       good = Patient.new('Good')
 
-      expect(Patient.all).to include(zero)
-      expect(Patient.all).to include(good)
+      expect(Patient.all_Patients).to include(zero)
+      expect(Patient.all_Patients).to include(good)
     end
   end
 

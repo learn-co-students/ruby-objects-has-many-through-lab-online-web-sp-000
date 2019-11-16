@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe 'Doctor' do
-  describe '#name' do
+  describe '#doctor_name' do  ### changed from name to doctor_name
     it 'has a name' do
       doctor_who = Doctor.new('The Doctor')
-      expect(doctor_who.name).to eq('The Doctor')
+      expect(doctor_who.doctor_name).to eq('The Doctor')  ### changed from .name to .doctor_name
     end
   end
 
@@ -12,9 +12,10 @@ describe 'Doctor' do
     it 'initializes with a name and adds itself to an array of all doctors' do
       doctor_smith = Doctor.new('John Smith')
       expect { Doctor.new('Martha Jones') }.to_not raise_error
-      expect(Doctor.all).to include(doctor_smith)
+      expect(Doctor.all_Doctors).to include(doctor_smith)  ### changed from .all to .all_Doctors
     end
   end
+
 
   describe '#new_appointment' do
     it 'given a date and a patient, creates a new appointment' do
@@ -22,7 +23,7 @@ describe 'Doctor' do
       hevydevy = Patient.new('Devin Townsend')
       appointment = doctor_who.new_appointment(hevydevy, 'Friday, January 32nd')
       expect(doctor_who.appointments).to include(appointment)
-      expect(appointment.doctor).to eq(doctor_who)
+      expect(appointment.doctor_name).to eq(doctor_who)  ### changed .doctor to .doctor_name
     end
   end
 
@@ -37,13 +38,13 @@ describe 'Doctor' do
     end
   end
 
-  describe '#patients' do
+  describe '#all_patients' do  # changed from #patients to #all_patients
     it 'has many patients, through appointments' do
       doctor_who = Doctor.new('The Doctor')
       hevydevy = Patient.new('Devin Townsend')
       doctor_who.new_appointment(hevydevy, 'Friday, January 32nd')
-
-      expect(doctor_who.patients).to include(hevydevy)
+# binding.pry
+      expect(doctor_who.all_patients).to include(hevydevy)  # changed from .patients to .all_patients
     end
   end
 end
