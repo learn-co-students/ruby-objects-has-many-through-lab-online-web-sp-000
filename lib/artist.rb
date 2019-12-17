@@ -8,7 +8,7 @@
 # The Artist class needs an instance method, #genres that iterates over that artist's songs and collects the genre of each song.
 
 class Artist 
-  attr_accessor :name
+  attr_accessor :name, :song, :genre 
   
   @@all = [] 
   
@@ -21,12 +21,17 @@ class Artist
     @@all 
   end 
   
-  def new_song(song, genre)
-    song = Song.new(self)
+  def new_song(name, genre)
+    Song.new(name, self, genre)
   end 
   
   def songs 
+    # Iterates through all songs and finds songs that belong to artist
     Song.all.select {|song| song.artist == self} 
+  end 
+  
+  def genres 
+    Genre.all 
   end 
   
   
