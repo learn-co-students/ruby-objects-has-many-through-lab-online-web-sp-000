@@ -1,3 +1,5 @@
+require 'pry'
+
 class Artist
 
   attr_accessor :name
@@ -13,17 +15,19 @@ class Artist
     @@all
   end
 
+  # given a name and genre, creates a new song associated with that artist
   def new_song(name, genre)
-    self.artist = Song.new
+    # binding.pry
+    self.name = Song.new(name, self, genre)
   end
 
   def songs
-    Song.all.select {|songs| song.artist == self}
+    Song.all.select {|songs| songs.artist == self}
   end
 
   # iterates over that artist's songs and collects the genre of each song.
   def genres
-    
+
   end
 
 
