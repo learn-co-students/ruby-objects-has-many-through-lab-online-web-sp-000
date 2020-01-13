@@ -15,14 +15,15 @@ class Genre
 
   # iterates through all songs and finds the songs that belong to that genre.
   def songs
-    Song.all.find {|songs| song.genre == self }
+    Song.all.select {|songs| songs.genre == self }
   end
 
   # iterates over the genre's collection of songs and collects the artist that owns each song.
+  # self => #<Genre:0x0000000001656430 @name="rap">
   def artists
-    songs.collect do |artist|
-      song.artist
-    end
+    self.songs.collect do |song|
+			song.artist
+		end
   end
 
 

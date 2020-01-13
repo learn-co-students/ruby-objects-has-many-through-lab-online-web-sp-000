@@ -17,8 +17,7 @@ class Artist
 
   # given a name and genre, creates a new song associated with that artist
   def new_song(name, genre)
-    # binding.pry
-    self.name = Song.new(name, self, genre)
+    Song.new(name, self, genre)
   end
 
   def songs
@@ -27,7 +26,9 @@ class Artist
 
   # iterates over that artist's songs and collects the genre of each song.
   def genres
-
+    self.songs.collect do |song|
+      song.genre
+    end
   end
 
 
