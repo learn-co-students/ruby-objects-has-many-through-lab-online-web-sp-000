@@ -16,14 +16,15 @@ class Artist
     end
 
     def genres
-        songs.map {|song| song.genre}
+        # songs.map {|song| song.genre}
+        songs.map(&:genre)
     end
 
     def new_song(name, genre)
         song = Song.new(name, self, genre)
-        song.artist = self
-        song.genre = genre
-        song
+        # song.artist = self
+        # song.genre = genre
+        # song
     end
 
 end
