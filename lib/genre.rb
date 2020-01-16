@@ -26,10 +26,7 @@ class Genre
             if song.genre.name == self.name 
                 artists << song.artist
             end
-            
         end
         artists
     end
-
-    
 end
