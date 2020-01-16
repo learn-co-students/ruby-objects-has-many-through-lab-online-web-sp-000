@@ -22,10 +22,8 @@ class Genre
 
     def artists
         artists = []
-        genre = self.name
-        #binding.pry
         Song.all.each do |song|
-            if song.genre.name == genre 
+            if song.genre.name == self.name 
                 artists << song.artist
             end
             
