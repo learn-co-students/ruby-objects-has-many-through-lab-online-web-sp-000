@@ -8,6 +8,7 @@ class Artist
 
     def initialize(name)
         @name = name
+        #@genre: genre
         @@all << self
     end
 
@@ -28,21 +29,10 @@ class Artist
 
     def genres
         genres = []
-        # binding.pry
-        self.songs.each { |song| genres << song}
+        #binding.pry
+        self.songs.each { |song| genres << song.genre}
+        genres
     end
 
-    
+      
 end
-
-# # def meals
-# #     Meal.all.select do |meal|
-# #       meal.customer == self
-# #     end
-# # end
-
-# def waiters
-#     waiters = []
-#     self.meals.each {|meal| waiters << meal.waiter }
-#     waiters 
-# end
