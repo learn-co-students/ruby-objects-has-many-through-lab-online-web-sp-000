@@ -23,6 +23,5 @@ class Doctor
     
   def patients 
     appointments.collect {|appt| appt.patient}
-    binding.pry
   end
 end
