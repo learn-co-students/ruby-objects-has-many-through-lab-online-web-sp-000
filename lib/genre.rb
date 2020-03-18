@@ -12,13 +12,10 @@ class Genre
   end
   
   def songs 
-    @songs 
+    Song.all.select {|song| song.genre == self} 
   end
-    
-  def new_song(name, genre)
-    Song.new()
-    
-    def new_meal(waiter, total, tip=0)
-    Meal.new(waiter, self, total, tip)
+  
+  def artists
+    songs.collect {|song| song.artist}
   end
 end
