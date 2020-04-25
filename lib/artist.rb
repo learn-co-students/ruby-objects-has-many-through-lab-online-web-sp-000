@@ -13,7 +13,7 @@ class Artist
   end
   
   def new_song(name, genre)
-    song = Song.new(name, genre)
+    Song.new(name, self, genre)
   end
   
   def songs
@@ -21,7 +21,9 @@ class Artist
   end
   
   def genres
-    Genre.all.select {|genre| genre.artist.self}
+    songs.map do |genre|
+      genre.artist
+    end
   end
   
 end
