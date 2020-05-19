@@ -1,5 +1,5 @@
 class Artist
-
+  attr_reader :name
   @@all = Array.new
 
   def initialize(name)
@@ -11,22 +11,15 @@ class Artist
     @@all
   end
 
-  # def new_song(name, genre)
-    # The Artist class needs an instance method,
-    #new_song, that takes in an argument of a name
-    # and genre creates a new song.
+  def songs
+    Song.all.select {|s| s.artist == self}
+  end
 
-    # That song should know that it belongs to the artist.
-  # end
+  def new_song(name, genre)
+    Song.new(name, self, genre)
+  end
 
-  # def songs
-    # The Artist class needs an instance method,
-    #songs, that iterates through all songs and
-    # finds the songs that belong to that artist.
-    # Try using select to achieve this.
-  # end
-
-  # def genres
-    # collects genres of each song
-  # end
+  def genres
+    songs.map {|s| s.genre}
+  end
 end

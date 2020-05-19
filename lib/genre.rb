@@ -1,9 +1,10 @@
 class Genre
+  attr_reader :name
   @@all = Array.new
 
   def initialize(name)
     @name = name
-    @@all << name
+    @@all << self
   end
 
   def self.all
@@ -11,7 +12,7 @@ class Genre
   end
 
   def songs
-    Song.all.collect {|s| s.genre == self}
+    Song.all.select {|s| s.genre == self}
   end
 
   def artists

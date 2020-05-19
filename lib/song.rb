@@ -1,4 +1,5 @@
 class Song
+  attr_reader :artist, :genre
   @@all = Array.new
 
   def initialize(name, artist, genre)
@@ -12,4 +13,3 @@ class Song
     @@all
   end
 end
-  
