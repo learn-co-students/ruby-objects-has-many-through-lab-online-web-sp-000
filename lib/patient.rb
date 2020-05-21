@@ -28,11 +28,10 @@ class Patient
     name = Patient.new(name)
   end 
   
-  def doctors 
-    Appointment.all.select do |appointment|
-      appointment.patient == self
-      # binding.pry
+  def doctors
+    Doctor.all.select do |doctor|
+      doctor.patient == self 
     end
   end 
-  
+
 end 
