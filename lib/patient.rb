@@ -1,14 +1,13 @@
-require 'pry'
-require_relative 'artist'
-require_relative 'genre'
+require_relative 'doctor'
+require_relative 'appointment'
 class Patient 
   attr_accessor :name, :date, :doctor
   @@all = []
   
-  def initialize(name, doctor=nil, appointment=nil)
+  def initialize (date= nil, name, doctor)
     @name = name
     @doctor = doctor
-    @appointment = appointment
+    @date = date
     @@all << self
   end
   
@@ -18,6 +17,10 @@ class Patient
   
   def new_appointment(date, doctor)
     date = Appointment.new(date, doctor)
+  end 
+  
+  def new(name)
+    name = Patient.new(name, doctor=nil)
   end 
   
   def doctors 
