@@ -16,13 +16,19 @@ class Doctor
     @@all
   end 
   
-  def new_patient(name, genre)
-  name = Patient.new(name, self, genre)
+  def appointments 
+    Appointment.all.select do |appointment|
+      appointment.doctor == self 
+    end
+  end 
+  
+  def new_appointment(name, appointment)
+  name = Appointment.new(name, self, appointment)
   end 
 
   def patient 
     Patient.all.select do |patient|
-    patient.doctor == self
+    patient.appointment
   end
   end 
   
