@@ -4,17 +4,19 @@ require_relative 'doctor'
 class Appointment
 
   attr_reader :date, :doctor
-  attr_accessor :patient
+  attr_accessor :name
 @@all = []
 
   def initialize(date, name, doctor)
     @name = name
+    @date = date
+    @doctor = doctor
     @@all << self
   end
 
   def patient
     Patient.all.select do |patient|
-      patient.appointment == self
+      patient.date == self
     end
   end
 
