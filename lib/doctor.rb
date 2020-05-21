@@ -6,9 +6,9 @@ class Doctor
   
   def initialize(name)
     @name = name
-    # @genre = genre
+    @patient = patient
     # @song = song
-  @@all << self
+    @@all << self
   end
   
   def self.all 
@@ -21,12 +21,12 @@ class Doctor
     end
   end 
   
-  def new_appointment(date, name)
-  date = Appointment.new(date, name, self)
+  def new_appointment(date, patient)
+  date = Appointment.new(date, patient, self)
   end 
 
   def patients
-    Appointments.map do |appointment|
+    appointments.map do |appointment|
       appointment.patient  
     end
   end
