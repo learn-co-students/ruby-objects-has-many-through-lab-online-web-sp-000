@@ -1,6 +1,3 @@
-require_relative 'patient'
-require_relative 'doctor'
-
 class Appointment
 
   attr_reader :date, :doctor
@@ -20,11 +17,11 @@ class Appointment
     end
   end
 
-  def doctor
-    Patient.all.select do |patient|
-      patient.doctor
-    end
-  end
+  # def doctor
+  #   Patient.all.detect do |patient|
+  #     patient.doctor
+  #   end
+  # end
   
   def self.all 
     @@all

@@ -1,6 +1,5 @@
 require 'pry'
-require_relative 'patient'
-require_relative 'appointment'
+
 class Doctor 
     attr_accessor :name, :date, :patient
   @@all = []
