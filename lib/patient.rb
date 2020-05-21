@@ -4,7 +4,7 @@ class Patient
   
   def initialize (name)
     @name = name
-    # @doctor = doctor
+    @doctor = doctor
     # @date = date
     @@all << self
   end
