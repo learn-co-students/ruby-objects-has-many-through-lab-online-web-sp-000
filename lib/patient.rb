@@ -23,10 +23,8 @@ class Patient
   end
 
   def doctors
-    doctors = []
-    self.appointments.each do |appointment|
-      doctors << appointment.doctor
+    self.appointments.map do |appointment|
+      appointment.doctor
     end
-    doctors
   end
 end

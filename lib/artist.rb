@@ -23,10 +23,8 @@ class Artist
   end
 
   def genres
-    genres = []
-    self.songs.each do |song|
-      genres << song.genre
+    self.songs.map do |song|
+      song.genre
     end
-    genres
   end
 end
