@@ -1,0 +1,5 @@
+class Song
+
+@@all = []
+
+end
