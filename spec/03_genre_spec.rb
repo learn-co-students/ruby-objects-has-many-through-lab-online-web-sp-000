@@ -10,9 +10,9 @@ describe 'Genre' do
 
   describe '#songs' do
     it 'has many songs' do
-      jay_z = Artist.new('Jay-Z')
-      rap = Genre.new('rap')
-      Song.new('99 Problems', jay_z, rap)
+      jay_z = Artist.new('Jay-Z') #Good
+      rap = Genre.new('rap') #Good
+      Song.new('99 Problems', jay_z, rap) #Good
       shrimp = Song.new('Big Shrimpin', jay_z, rap)
 
       expect(rap.songs).to include(shrimp)
