@@ -21,6 +21,6 @@ class Doctor
   end
 
   def patients
-    appointments.map(&:patient)
+    appointments.map(&:patient) #short cut for appointment.map { |song| appointment.patient) }
   end
 end
