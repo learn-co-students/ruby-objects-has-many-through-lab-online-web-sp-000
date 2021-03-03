@@ -17,9 +17,9 @@ end
 
 
 def songs
-   Song.all.select |song|
-    artist.song 
-end 
+   Song.all.select|song|
+   song.name
+   end 
 
 
   def new_song(name)
