@@ -17,11 +17,13 @@ end
 
 
 def songs
-  song = Song.new 
-  song
-  end
-
-
+  Song.all.select do |song|
+  johnny_cash = Artist.new("Johnny Cash")
+  johnny_cash.song
+end 
+end 
+ 
+   
   def new_song(name, genre) 
     Song.new(name, genre)
   end
