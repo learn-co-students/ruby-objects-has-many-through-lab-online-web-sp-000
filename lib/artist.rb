@@ -17,14 +17,14 @@ end
 
 
 def songs
-   Song.all.select|song|
-   song.name
-   end 
+  song = Song.new 
+  song
+  end
 
 
-  def new_song(name)
-    Song.all.new(name, genre)
-  end 
+  def new_song(name, genre) 
+    Song.new(name, genre)
+  end
 
   def genres(song, artist) 
    Genres.new(song,self, name)
