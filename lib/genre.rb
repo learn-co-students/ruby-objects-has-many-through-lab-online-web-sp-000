@@ -11,7 +11,9 @@ class Genre
   end
   
   
-  def Songs(name, artist)
-    Songs.new(name, artist, self) 
+  def songs
+    Song.all.map do |song|
+    self.song 
   end 
+end 
 end 
