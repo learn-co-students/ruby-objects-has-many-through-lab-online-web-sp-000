@@ -18,18 +18,19 @@ end
 
 def songs
   Song.all.select do |song|
-  johnny_cash = Artist.new("Johnny Cash")
-  johnny_cash.song
+    self == song.artist
 end 
 end 
+
  
    
   def new_song(name, genre) 
-    Song.new(name, genre)
+    Song.new(name, self, genre)
   end
 
-  def genres(song, artist) 
-   Genres.new(song,self, name)
+  def genres
+    songs.select do |song|
+    song.genre
   end 
-end 
- 
+ end 
+ end 
