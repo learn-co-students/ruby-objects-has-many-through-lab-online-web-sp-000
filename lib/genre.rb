@@ -7,13 +7,26 @@ class Genre
   
   def initialize(name)
     @name = name 
-    @@all << self 
+    @@all << self
   end
+  
+  
+  def self.all 
+    @@all 
+  end 
   
   
   def songs
     Song.all.map do |song|
-    self.song 
-  end 
+    song
+  end
 end 
-end 
+
+
+  def artists 
+    songs.map do |genre|
+    genre.artist
+    end 
+  end
+end
+ 
