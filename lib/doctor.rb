@@ -29,8 +29,8 @@ class Doctor
      
   
     def appointment 
-      Patient.each do |appointments|
-      appointments.doctor 
+      Doctor.all.select do |doctors|
+      doctor.appointment 
     end 
   end 
 end

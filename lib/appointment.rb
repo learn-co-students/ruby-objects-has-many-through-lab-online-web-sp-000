@@ -21,7 +21,7 @@ class Appointment
   
   def patient 
     Patient.all.select do |patients|
-    self.appointment 
+    self.appointment
   end 
 end 
 

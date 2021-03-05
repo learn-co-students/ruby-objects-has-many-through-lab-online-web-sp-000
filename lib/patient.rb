@@ -7,8 +7,6 @@ class Patient
 
     def initialize(name) 
       @name = name 
-      @appointment = appointment 
-      @doctor = doctor 
       @@all << self 
     end 
     
@@ -22,8 +20,8 @@ class Patient
      end 
   
     def appointment 
-      Patient.each do |appointments|
-      appointments.doctor 
+      Patient.all.select do |patients|
+      patients.appointment 
     end 
   end 
 end 
