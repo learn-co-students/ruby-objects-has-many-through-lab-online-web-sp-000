@@ -29,8 +29,7 @@ class Doctor
      
   
     def appointment 
-      binding.pry 
-      self.each do |appointments|
+      Patient.each do |appointments|
       appointments.doctor 
     end 
   end 

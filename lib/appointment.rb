@@ -11,6 +11,12 @@ class Appointment
     @patient = patient 
     @@all << self 
   end 
+
+  
+  def self.all
+    @@all 
+  end 
+  
   
   
   def patient 
@@ -20,7 +26,15 @@ class Appointment
 end 
 
 
-def new_appointment
-  self.new 
+def new_appointment(date, doctor, patient)
+  Appointment.new(date, doctor, patient)
+end 
+
+
+def doctor 
+  Doctor.all.select do |doctors|
+    doctors.appointment 
+  end 
 end 
 end 
+
