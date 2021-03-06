@@ -5,7 +5,7 @@ class Appointment
   @@all = []
   
   
-  def initialize (date, doctor, patient)
+  def initialize (date, doctor, patient) 
     @date = date 
     @doctor = doctor
     @patient = patient 
@@ -26,15 +26,15 @@ class Appointment
 end 
 
 
-def new_appointment(date, doctor, patient)
-  Appointment.new(date, doctor, patient)
-end 
+    def new_appointment(date, doctor, patient)
+      Appointment.new(date, patient)
+    end 
 
 
-def doctor 
-  Doctor.all.select do |doctors|
-    doctors.appointment 
-  end 
+    def doctor 
+      Doctor.all.select do |doctors|
+      doctors.appointment 
+    end 
 end 
 end 
 
