@@ -29,8 +29,7 @@ class Patient
       new_array = self.appointments.map do |appointment|
         #do select when you only want to  some grab appointments, map changes all of the appointments
       appointment.doctor 
-    end 
-    
+    end
   end 
      
  

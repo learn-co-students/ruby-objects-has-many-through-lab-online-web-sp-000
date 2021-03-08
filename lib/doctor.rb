@@ -10,12 +10,6 @@ class Doctor
       @@all << self 
     end 
     
-    
-    def name
-     @name 
-    end 
-    
-    
   
      def self.all 
        @@all
@@ -43,8 +37,4 @@ class Doctor
       appointment.patient
     end
   end 
-      
-      # Appointments.all.select |occurrence 
-      # occurrence.patients
-    #   end 
 end
