@@ -2,39 +2,28 @@ require 'pry'
 
 class Appointment
   attr_accessor :date, :doctor, :patient 
+#setter and getter methods create a doctor and patient method
   @@all = []
   
   
-  def initialize (date, doctor, patient) 
+  def initialize (date, patient, doctor) 
     @date = date 
     @doctor = doctor
-    @patient = patient 
+    #where doctor belongs to appointment
+    @patient = patient
+    #where patient belongs to appointment
     @@all << self 
-  end 
+  end
 
   
   def self.all
     @@all 
   end 
   
-  
-  
-  def patient 
-    Patient.all.select do |patients|
-    self.appointment
-  end 
-end 
 
 
-    def new_appointment(date, doctor, patient)
+    def new_appointment(date, patient, doctor)
       Appointment.new(date, patient)
     end 
-
-
-    def doctor 
-      Doctor.all.select do |doctors|
-      doctors.appointment 
-    end 
-end 
-end 
+   end 
 

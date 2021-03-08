@@ -18,20 +18,24 @@ class Patient
      
   
     def appointments 
-     Appointment.all.select do |occurrence|
-    self == occurrence.patient 
+     Appointment.all.select do |appointment|
+    self == appointment.patient 
     end 
   end 
-  
-  
+
+
+
     def doctors
-      Appointment.all.select do |occurrence|
-      occurrence.doctor 
+      new_array = self.appointments.map do |appointment|
+        #do select when you only want to  some grab appointments, map changes all of the appointments
+      appointment.doctor 
     end 
-  end 
     
+  end 
+     
+ 
     
     def new_appointment(date,doctor)
-      appointment.new(date, doctor)
+      Appointment.new(date, self, doctor)
     end 
 end 

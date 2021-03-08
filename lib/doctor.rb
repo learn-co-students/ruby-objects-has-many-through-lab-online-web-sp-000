@@ -23,20 +23,28 @@ class Doctor
      
      
      def new_appointment(date, patient)
-       Appointment.new(date, patient)
+       Appointment.new(date, patient, self)
+       #use self to replace doctor, because doctor variable has not been established prior to this
      end 
      
      
   
     def appointments
-      Appointment.all.select do |appointments|
-      appointments.doctor
+    new_array = Appointment.all.select do |detail|
+      self == detail.doctor
      end 
+     new_array
    end 
 
 
     def patients
-      Appointments.all.select |occurrence|
-        occurrence.patients
-      end 
+      self.appointments.map do |appointment|
+      #self in this case pertais to a specific doctor
+      appointment.patient
     end
+  end 
+      
+      # Appointments.all.select |occurrence 
+      # occurrence.patients
+    #   end 
+end
