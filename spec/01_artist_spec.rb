@@ -31,7 +31,7 @@ describe "Artist" do
       particle_man = Song.new("Particle Man", tmbg, nerd_rock)
 
       expect(jay_z.songs).to include(ninety_nine_problems)
-      expect(jay_z.songs).not_to include(particle_man)
+      expect(jay_z.songs).not_to include(particle_man) 
     end
   end
 
