@@ -22,19 +22,21 @@ class Doctor
      end
      
      
-     def new_appointment(date, patient) 
+     def new_appointment(date, patient)
        Appointment.new(date, patient)
      end 
      
      
   
-    def appointments(date, patient) 
-      Doctor.all.select do |doctors|
-      doctor.appointments 
+    def appointments
+      Appointment.all.select do |appointments|
+      appointments.doctor
+     end 
+   end 
+
+
+    def patients
+      Appointments.all.select |occurrence|
+        occurrence.patients
+      end 
     end
-  end 
-  
-  
-    def patients() 
-    end 
-end
