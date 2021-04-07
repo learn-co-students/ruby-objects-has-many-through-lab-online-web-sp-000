@@ -28,5 +28,5 @@ class Patient
   def self.all
     @@all
   end
-
+ #whyyyyyyy
 end
