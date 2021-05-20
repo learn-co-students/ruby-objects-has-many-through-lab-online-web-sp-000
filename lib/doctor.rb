@@ -7,8 +7,6 @@ class Doctor
   
     def initialize(name)
       @name = name
-      @appointment = appointment
-      @patient = patient
       @@all << self
     end
   
@@ -19,11 +17,12 @@ class Doctor
     
     def new_appointment(date, patient)
         #binding.pry
-        Appointment.new(patient, self, date)
+        Appointment.new(date, patient, self)
       
     end
   
     def appointments
+        #binding.pry
       Appointment.all.select do |app|
         app.doctor == self
 
@@ -33,7 +32,7 @@ class Doctor
   
     def patients
       appointments.map do |appointment|
-        appointment.patients
+        appointment.patient
       end
     end
   
