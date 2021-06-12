@@ -12,16 +12,21 @@ class Artist
     end
 
     def new_song(name, genre)
-        song = Song.new(name, self, genre)        
+        Song.new(name, self, genre)        
     end
 
     def songs 
         Song.all.select do |song|
-            song.artist = self
+            song.artist == self
         end
         # binding.pry
     end
 
-    
+    def genres
+        self.songs.map do |song|
+            song.genre
+        end
+    end
+
 
 end
