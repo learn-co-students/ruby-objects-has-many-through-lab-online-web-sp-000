@@ -20,8 +20,8 @@ class Doctor
 
     def patients
         # binding.pry 
-        self.appointments.select do |appt|
-            
+        self.appointments.map do |appt|
+            appt.patient 
         end
     end
 
