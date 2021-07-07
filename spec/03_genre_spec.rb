@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe 'Genre' do
   describe '#name' do
@@ -40,7 +41,7 @@ describe 'Genre' do
       rap = Genre.new('rap')
       ninenty_nine_problems = Song.new('99 Problems', jay_z, rap)
       humble = Song.new('HUMBLE', kendrick, rap)
-
+      
       expect(rap.artists).to include(jay_z)
       expect(rap.artists).to include(kendrick)
     end
